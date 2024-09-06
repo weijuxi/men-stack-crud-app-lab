@@ -11,6 +11,7 @@ mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
+const Food = require("./models/food.js");
 
 app.get("/", async (req, res) => {
     res.render("index.ejs");
