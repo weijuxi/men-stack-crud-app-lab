@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
 const foodSchema = new mongoose.Schema({
-    name: String,
-    isReadyToEat: Boolean,
+    name: { type: String, required: true },
+    price: { type: Number, required: true },
+    img: String,
 });
 
 const Food = mongoose.model("Food", foodSchema);
