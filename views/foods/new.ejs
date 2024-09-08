@@ -8,6 +8,13 @@
     <title>Create a Food</title>
   </head>
   <body>
+    <a href="/foods">Browse Foods</a>
     <h1>Create a New Food!</h1>
+    <form action="/foods" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+      <label for="price">Price:</label>
+      <input type="number" name="price" id="price" />
+      <button type="submit">Create Food</button>
   </body>
 </html>
