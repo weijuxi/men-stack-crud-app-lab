@@ -11,6 +11,12 @@
     <ul>
       <% foods.forEach(food => { %>
         <li><a href="/foods/<%= food._id %>"><%= food.name %></a></li>
+        <!--Edit button to edit page-->
+        <a href="/foods/<%= food._id %>/edit"><button type="button">Edit</button></a>
+        <!-- new delete button -->
+        <form action="/foods/<%= food._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
       <% }); %>
   </body>
 </html>
