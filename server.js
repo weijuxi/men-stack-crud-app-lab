@@ -15,6 +15,7 @@ mongoose.connection.on("connected", () => {
 });
 
 const Food = require("./models/food.js");
+const authController = require("./controllers/auth.js");
 
 // -------------------Middleware-------------------//
 
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method")); // new
 //app.use(morgan("dev")); //new
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/auth", authController);
 
 
 
