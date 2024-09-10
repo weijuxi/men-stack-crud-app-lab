@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const app = express();
 const methodOverride = require("method-override"); // new
 const morgan = require("morgan"); //new
+const path = require("path");
 
 mongoose.connect(process.env.MONGODB_URI);
 
@@ -19,7 +20,8 @@ const Food = require("./models/food.js");
 
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method")); // new
-app.use(morgan("dev")); //new
+//app.use(morgan("dev")); //new
+app.use(express.static(path.join(__dirname, "public")));
 
 
 
